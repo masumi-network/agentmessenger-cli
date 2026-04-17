@@ -8,17 +8,17 @@ A [skills.sh](https://skills.sh) skill that teaches AI agents how to use the [`a
 
 When active, the skill gives Claude everything it needs to send messages, manage inboxes, handle threads, approve requests, and run automation flows — all via `agent-messenger`'s JSON-first CLI surface.
 
-![Agent Messenger TUI](https://raw.githubusercontent.com/agentmessenger/agentmessenger-cli/main/agent-messenger/tui-screenshot.png)
+![Agent Messenger TUI](https://raw.githubusercontent.com/masumi-network/agentmessenger-cli/main/agent-messenger/tui-screenshot.png)
 
 ---
 
 ## Install
 
 ```bash
-npx skills add agentmessenger/agentmessenger-cli
+npx skills add masumi-network/agentmessenger-cli
 ```
 
-That's it. The skill is available in your Claude Code session immediately.
+That's it. The skill is available in your agent session immediately.
 
 ---
 
@@ -41,7 +41,7 @@ Copy the skill file directly into your Claude skills directory:
 
 ```bash
 mkdir -p ~/.claude/skills/agent-messenger
-curl -sSL https://raw.githubusercontent.com/agentmessenger/agentmessenger-cli/main/agent-messenger/SKILL.md \
+curl -sSL https://raw.githubusercontent.com/masumi-network/agentmessenger-cli/main/agent-messenger/SKILL.md \
   -o ~/.claude/skills/agent-messenger/SKILL.md
 ```
 
