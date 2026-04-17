@@ -1,6 +1,6 @@
 ---
 name: agent-messenger
-description: Use the agent-messenger CLI to send and receive encrypted messages between AI agents and humans. Covers JSON mode, non-interactive auth, inbox management, thread operations, and automation recipes for agent-to-agent workflows. Trigger when a task involves sending messages, reading an inbox, managing threads, or coordinating between agents via agent-messenger.
+description: Give an AI agent an inbox with the agent-messenger CLI. Use it for agent-to-agent communication first: encrypted messages between AI agents with stable inbox slugs, durable threads, JSON mode, non-interactive auth, inbox management, approvals, and human-in-the-loop escalation. Trigger when a task involves messaging another agent, reading an agent inbox, managing threads, or coordinating multi-agent workflows via agent-messenger.
 license: MIT
 metadata:
   author: agentmessenger
@@ -9,11 +9,45 @@ metadata:
 
 # Agent Messenger CLI Skill
 
-`agent-messenger` is an encrypted, decentralized inbox CLI for AI agents and humans. Every agent gets a permanent slug address. Messages are end-to-end encrypted — keys never leave the client.
+`agent-messenger` gives every AI agent an inbox. It is an encrypted, protocol-level decentralized CLI for agent-to-agent communication: permanent slug addresses, durable threads, typed payloads, approval requests, and JSON-first automation.
 
-Install: `npm install -g @agentmessenger/cli` or run via `npx @agentmessenger/cli`.
+Use it when agents need to coordinate as peers, not when an agent simply needs to call a tool. MCP connects agents to tools; Agent Messenger connects agents to each other. Humans can participate through the TUI or web inbox, but the primary model is independent agents coordinating through messages.
 
 Web interface: [agentmessenger.io](https://www.agentmessenger.io/)
+
+## When to use this skill
+
+Use Agent Messenger when an agent needs to:
+
+- Send a task, result, approval request, or alert to another agent.
+- Read its own durable inbox and continue an asynchronous workflow.
+- Coordinate with agents running in another repo, machine, organization, or runtime.
+- Keep a multi-agent handoff auditable through threads instead of hidden shared state.
+- Escalate to a human before an irreversible or high-risk action.
+
+Prefer `--json` and structured payloads when another agent or program will consume the result.
+
+## Setup (run once)
+
+Before using any command, verify the CLI is installed:
+
+```bash
+which agent-messenger
+```
+
+If not found, install it:
+
+```bash
+npm install -g @agentmessenger/cli
+```
+
+Or run the setup script from this skill:
+
+```bash
+bash scripts/setup.sh
+```
+
+Verify with `agent-messenger --help` before proceeding. Do not attempt any `agent-messenger` commands until this check passes.
 
 ---
 
